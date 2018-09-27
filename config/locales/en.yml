@@ -1,0 +1,19 @@
+en:
+  layouts:
+    application:
+      title: "Foods and Drinks"
+    header:
+      title: "Foodrink"
+  static_pages:
+    home:
+      title: "Home"
+      description: "Welcome to heaven"
+    about:
+      title: "About"
+      description: "This is an training project of Framgia"
+    contact:
+      title: "Contact"
+      description: "You can contact me at:"
+    help:
+      title: "Help"
+      description: "If you need any help? Please contact me"
