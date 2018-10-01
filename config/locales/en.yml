@@ -1,5 +1,10 @@
 en:
   layouts:
+    flash:
+      success_signin: "Welcome to my Sample App"
+      notfound_user: "User can not found. Comeback to Home Page"
+      logged: "You have logged in. Log out before logging in another account"
+  layouts:
     application:
       title: "Foods and Drinks"
     header:
@@ -17,3 +22,21 @@ en:
     help:
       title: "Help"
       description: "If you need any help? Please contact me"
+  shared:
+    error_messages:
+      notification: "The form contains"
+      error: "error"
+  users:
+    user_form:
+      name: "Name"
+      email: "Email"
+      pass: "Password"
+      pass_confirm: "Confirmation"
+    new:
+      create: "Create my account"
+      title: "Sign up"
+  sessions:
+    new:
+      title: "Log in"
+      new: "New user?"
+      signup: "Sign up now"

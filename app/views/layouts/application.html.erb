@@ -8,6 +8,9 @@
 
   <body>
     <%= render "layouts/header" %>
+    <% flash.each do |mess_type, mess| %>
+        <%= content_tag :div, mess, class: "alert alert-#{mess_type}" %>
+      <% end %>
     <%= yield %>
     <%= render "layouts/footer" %>
   </body>

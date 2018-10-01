@@ -6,6 +6,6 @@ class Product < ApplicationRecord
   validates :name, presence: true,
     length: {maximum: Settings.product.name.max_size}
   validates :description, presence: true,
-    length: {Settings.product.description.max_size}
+    length: {maximum: Settings.product.description.max_size}
   validates :price, presence: true
 end

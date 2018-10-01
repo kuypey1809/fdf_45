@@ -1,0 +1,23 @@
+user:
+  name:
+    max_size: 50
+  email:
+    max_size: 255
+  pass:
+    min_size: 6
+  gravatar:
+    show_size: 80
+suggestion:
+  name:
+    max_size: 50
+  description:
+    max_size: 500
+product:
+  name:
+    max_size: 50
+  description:
+    max_size: 500
+category:
+  name:
+    max_size: 50
+
