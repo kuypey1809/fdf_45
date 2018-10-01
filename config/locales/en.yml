@@ -4,7 +4,9 @@ en:
       success_signin: "Welcome to my Sample App"
       notfound_user: "User can not found. Comeback to Home Page"
       logged: "You have logged in. Log out before logging in another account"
-  layouts:
+      updated: "Profile updated"
+      cant_edit: "You can not edit this profile"
+      log_in: "Please log in."
     application:
       title: "Foods and Drinks"
     header:
@@ -13,6 +15,7 @@ en:
     home:
       title: "Home"
       description: "Welcome to heaven"
+      signup: "Sign up now!"
     about:
       title: "About"
       description: "This is an training project of Framgia"
@@ -35,6 +38,12 @@ en:
     new:
       create: "Create my account"
       title: "Sign up"
+    edit:
+      title: "Edit user"
+      save: "Save changes"
+      description: "Update your profile"
+    index:
+      title: "Foodrink's members"
   sessions:
     new:
       title: "Log in"

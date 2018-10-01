@@ -7,6 +7,9 @@ user:
     min_size: 6
   gravatar:
     show_size: 80
+    index_size: 40
+  address:
+    max_size: 60
 suggestion:
   name:
     max_size: 50
