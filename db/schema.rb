@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2018_09_30_124558) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.boolean "status", default: false
+    t.integer "status", default: 0, null: false
     t.integer "total_cost"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_09_30_124558) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "price", default: 0, null: false
+    t.integer "price", default: 0
     t.string "picture"
     t.integer "average_rate"
     t.integer "category_id"

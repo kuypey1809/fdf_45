@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
-      t.boolean :status, default: false
+      t.integer :status, null: false, default: 0
       t.integer :total_cost
       t.references :user, foreign_key: true
 
