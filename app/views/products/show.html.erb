@@ -1,14 +1,37 @@
 <% provide :title, @product.name %>
-<div>
-  <h1><%= @product.name.upcase %></h1>
-  <p><%= image_tag @product.image.url, class: :image_container %></p>
-  <p><%= @product.description %></p>
-  <p><%= @product.price %></p>
-  <p><%= @product.category.name %></p>
-  <p><%= link_to t(".cart"), "#" %></p>
-  <% if current_user.present? && current_user.admin? %>
-    <%= link_to t(".delete"), @product, method: :delete,
-      data: {confirm: t(".confirm")} %>
-    | <%= link_to t(".update"), edit_product_path(@product.id)%>
-<% end %>
+<div class="main-page">
+  <div class="w3-container">
+    <h1 id="product-name"><%= @product.name.upcase %></h1>
+    <div class="col-md-8">
+      <p><%= image_tag @product.image.url, class: :image_container %></p>
+      <p id="product-description"><%= @product.description %></p>
+      <p><%= @product.price %></p>
+      <p><%= @product.category.name %></p>
+    </div>
+    <div class="col-md-4">
+
+      <div class="block-product">
+        <div class="block-quantity">
+          <input class="form-control" type="text" value="1" name="product-quantity" id="quantity">
+
+          <i class="fa fa-sort-up"  id="up-quantity"></i>
+          <i class="fa fa-sort-down"  id="down-quantity"></i>
+        </div>
+        <button id="btn-add-to-cart" class="btn btn-primary"><%= t(".cart") %></button>
+        <input type="hidden" id="product-id" value=<%= "#{@product.id}" %>>
+        <input type="hidden" id="product-price" value=<%= "#{@product.price}" %>>
+        <input type="hidden" id="product-image" value=<%= "#{@product.image.url}" %>>
+      </div>
+
+      <% if current_user.present? && current_user.admin? %>
+        <%= link_to t(".delete"), @product, method: :delete,
+          data: {confirm: t(".confirm")} %>
+        | <%= link_to t(".update"), edit_product_path(@product.id)%>
+    <% end %>
+    </div>
+  </div>
 </div>
+
+<% content_for :js do %>
+  <script src="/assets/product.js"></script>
+<% end %>

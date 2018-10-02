@@ -16,6 +16,8 @@ en:
       title: "Foodrink"
       categories: "Categories"
       users: "Users"
+      my_orders: "My Orders"
+      cart: "My Cart"
   static_pages:
     home:
       title: "Home"
@@ -78,6 +80,8 @@ en:
       create: "Create new category"
       title: Category
   products:
+    added: "You have added this product to your cart"
+    smaller: "Please choose another less than 5MB"
     updated: "Update product successful"
     new:
       title: "New Product"
@@ -86,8 +90,38 @@ en:
       price: "Price"
       category: "Category"
       product_created: "Create new product successful"
+      category: "Category"
+      select_category: "Select category"
     index:
       title: "List products"
       categories: "Categories"
     edit:
       update: "Update product"
+  carts:
+    added: "You have checkout this cart. Check your order for more information"
+    index:
+      product: "Product"
+      price: "Price"
+      quantity: "Quantiry"
+      subtotal: "Subtotal"
+      continue: "Continue Shopping"
+      checkout: "Checkout"
+  orders:
+    order:
+      time_default: "%H:%M %m/%d/%Y"
+    index:
+      title: "List all Orders"
+    personal_show:
+      title: "My Orders"
+      id: "ID"
+      time: "Order Time"
+      status: "Status"
+      price: "Total Cost"
+    show:
+      image: "Image"
+      name: "Name"
+      quantity: "Quantity"
+      unit: "Unit Price"
+      total: "Total Price"
+
+

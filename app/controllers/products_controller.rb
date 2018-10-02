@@ -45,12 +45,6 @@ class ProductsController < ApplicationController
 
   def load_products_by_category
     @products = Product.find_by_cate(params[:id])
-
-    # render :json => @products
-    # respond_to do |format|
-    #   format.json { render @products => 'missing', :formats => ["products/product"] }
-    #   format.html { }
-    # end
   end
 
   def product_params

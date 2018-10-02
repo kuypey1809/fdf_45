@@ -17,7 +17,6 @@
       <%= f.label :category_id, t(".category") %>
       <%= select_tag(:category_id, options_for_select(@categories),
           prompt: t(".select_category")) %>
-
       <%= f.submit t(".title"), class: "btn btn-primary" %>
       <%= f.file_field :image %>
     <% end %>
