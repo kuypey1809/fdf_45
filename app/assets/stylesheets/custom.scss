@@ -119,7 +119,7 @@ aside {
 }
 .gravatar {
   float: left;
-  margin-right: 10px;
+  margin-left: 130px;
 }
 .gravatar_edit {
   margin-top: 15px;
@@ -150,7 +150,7 @@ input {
     color: $state-danger-text;
   }
 }
-.users {
+.users, .categories {
   list-style: none;
   margin: 0;
   li {

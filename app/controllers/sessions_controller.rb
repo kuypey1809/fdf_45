@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
   def new
     return unless logged_in?
-    flash[:info] = t "layouts.flash.logged"
+    flash[:info] = t ".logged"
     redirect_to current_user
   end
 
   def create
     user = User.find_by email: params[:session][:email].downcase
-    if user&.authenticate(params[:session][:password])
+    if user&.authenticate params[:session][:password]
       log_in user
       redirect_back_or user
     else
-      flash.now[:danger] = t "layouts.flash.danger"
+      flash.now[:danger] = t ".danger"
       render :new
     end
   end

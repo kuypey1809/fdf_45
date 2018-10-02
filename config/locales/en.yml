@@ -1,12 +1,5 @@
 en:
   layouts:
-    flash:
-      success_signin: "Welcome to my Sample App"
-      notfound_user: "User can not found. Comeback to Home Page"
-      logged: "You have logged in. Log out before logging in another account"
-      updated: "Profile updated"
-      cant_edit: "You can not edit this profile"
-      log_in: "Please log in."
     application:
       title: "Foods and Drinks"
     header:
@@ -30,9 +23,18 @@ en:
       notification: "The form contains"
       error: "error"
   users:
+    cant_delete: "Cant delete this user"
+    deleted: "Delete user successfull"
+    updated: "Profile updated"
+    success_signin: "Welcome to my Sample App"
+    notfound: "User can not found. Comeback to Home Page"
+    cant_edit: "You can not edit this profile"
+    log_in: "Please log in."
     user_form:
       name: "Name"
       email: "Email"
+      address: "Address"
+      phone: "Phone number"
       pass: "Password"
       pass_confirm: "Confirmation"
     new:
@@ -45,7 +47,21 @@ en:
     index:
       title: "Foodrink's members"
   sessions:
+    danger: "Invalid email/password combination"
+    logged: "You have logged in. Log out before logging in another account"
     new:
       title: "Log in"
       new: "New user?"
       signup: "Sign up now"
+  categories:
+    not_found: "Category did not found"
+    cant_delete: "Cant delete this category"
+    new_category: "Create category successful"
+    index:
+      title: "List Categories"
+    category:
+      delete: "Delete"
+      confirm: "It's will delete all its sub-categories. Are you sure to delete this category?"
+    new:
+      create: "Create new category"
+      title: Category

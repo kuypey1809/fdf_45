@@ -1,0 +1,18 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @category do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+
+    <%= f.label :parent_id, t(".parent_id") %>
+    <%= f.collection_select(:parent_id, Category.order(:name), :id, :name, include_blank: true) %>
+
+    <%= f.submit t(".create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
