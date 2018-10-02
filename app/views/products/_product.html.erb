@@ -1,0 +1,22 @@
+<div class="col-md-4 block-inner">
+  <div class="inf-product">
+    <div class="col-md-12 img-product">
+      <%= image_tag product.image.url, class: :image_index %>
+    </div>
+    <div class="col-md-12">
+      <div class="description">
+        <label>
+          <%= product.name %>
+        </label>
+      </div>
+      <div class="description">
+        <label>
+          <%= number_to_currency(product.price, unit: "vnd", format: "%n %u") %>
+        </label>
+      </div>
+      <div class="action">
+        <%= link_to t(".detail"), product, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

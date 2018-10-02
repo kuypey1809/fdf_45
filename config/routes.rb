@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/get-product/:id", to: "products#load_by_category", as: "getListProduct"
 
   resources :users
   resources :categories
+  resources :products
 end

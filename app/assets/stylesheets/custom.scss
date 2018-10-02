@@ -150,7 +150,7 @@ input {
     color: $state-danger-text;
   }
 }
-.users, .categories {
+.users, .categories, .products {
   list-style: none;
   margin: 0;
   li {
@@ -158,4 +158,58 @@ input {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+.image_container {
+  width: 500px;
+  height: 400px
+}
+.main-page {
+  position: relative;
+  .block {
+    margin-top: 10px;
+    .block-inner {
+      margin: 10px 0 15px 0;
+      .inf-product {
+        border: 1px solid #F7F7F5;
+        padding: 5px;
+        height: 380px;
+        .image_index {
+          width: 100%;
+          height: 230px;
+        }
+        .description {
+          margin-top: 10px;
+          text-align: center;
+          label {
+            text-align: center;
+            font-size: 25px;
+            font-weight: 500;
+          }
+        }
+        .action {
+          text-align: center;
+          a {
+            width: 150px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+  .block-bottom {
+    position: absolute;
+    bottom: -32px;
+    right: 30px;
+
+    .btn-create-product {
+      width: 150px;
+      height: 30px;
+    }
+  }
+}
+.sub-nav-cate {
+  margin: 5px 0 5px 15px;
+}
+.display-i-b {
+  display: inline-block !important;
 }

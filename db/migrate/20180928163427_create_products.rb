@@ -4,8 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.integer :price, default: 0
-      t.string :picture
-      t.integer :average_rate
+      t.integer :average_rate, default: 0
       t.references :category, foreign_key: true
 
       t.timestamps

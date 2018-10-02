@@ -1,9 +1,21 @@
 en:
   layouts:
+    flash:
+      success_signin: "Welcome to my Sample App"
+      notfound_user: "User can not found. Comeback to Home Page"
+      logged: "You have logged in. Log out before logging in another account"
+      updated: "Profile updated"
+      cant_edit: "You can not edit this profile"
+      log_in: "Please log in."
+      new_category: "Create new category successfull"
+      deleted: "Delete successfull"
+      cant_delete: "Something wrong"
     application:
       title: "Foods and Drinks"
     header:
       title: "Foodrink"
+      categories: "Categories"
+      users: "Users"
   static_pages:
     home:
       title: "Home"
@@ -65,3 +77,17 @@ en:
     new:
       create: "Create new category"
       title: Category
+  products:
+    updated: "Update product successful"
+    new:
+      title: "New Product"
+      name: "Name"
+      description: "Description"
+      price: "Price"
+      category: "Category"
+      product_created: "Create new product successful"
+    index:
+      title: "List products"
+      categories: "Categories"
+    edit:
+      update: "Update product"

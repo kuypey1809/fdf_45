@@ -20,6 +20,8 @@ product:
     max_size: 50
   description:
     max_size: 500
+  image:
+    max_size: 5
 category:
   name:
     max_size: 50
