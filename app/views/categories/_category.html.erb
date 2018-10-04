@@ -1,0 +1,12 @@
+<ul>
+  <%= category.name %>
+    <% @children = category.generate_children%>
+    <% if current_user.present? &&current_user.admin? %>
+    | <%= link_to t(".delete"), category, method: :delete,
+        data: {confirm: t(".confirm")} %>
+  <% end %>
+    <li>
+    <%= render @children %>
+    </li>
+</ul>
+

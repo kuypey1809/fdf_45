@@ -1,11 +1,45 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+  <div class="col-md-3">
+    <div class="box">
+      <div class="box-body box-profile">
+        <div class="avatar-container clearfix">
+          <%= gravatar_for @user %>
+        </div>
+        <h3 class="profile-username text-center"><%= @user.name %></h3>
+        <p class="text-muted text-center">
+          <b><%= t "view.users.left_panel.email" %></b>
+          <b><%= @user.email %></b>
+          <%= link_to "#" do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="box">
+      <table class="table table-user-information">
+        <tbody>
+          <tr>
+            <td><%= t "users.user_form.name" %></td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <td><%= t "users.user_form.email" %></td>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <td><%= t "users.user_form.address" %></td>
+            <td><%= @user.address %></td>
+          </tr>
+          <tr>
+            <td><%= t "users.user_form.phone" %></td>
+            <td><%= @user.phone %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+

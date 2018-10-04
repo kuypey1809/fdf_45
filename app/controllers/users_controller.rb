@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: %i(show edit)
+  before_action :load_user, only: %i(show edit destroy)
   before_action :logged_in_user, except: %i(show new create)
   before_action :correct_user, only: %i(edit update)
+  before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate page: params[:page]
   end
 
   def show; end
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      flash[:success] = t "layouts.flash.success_signin"
+      flash[:success] = t ".success_signin"
       redirect_to @user
     else
       render :new
@@ -28,11 +29,20 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "layouts.flash.updated"
+      flash[:success] = t ".updated"
       redirect_to @user
     else
       render :edit
     end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t ".deleted"
+    else
+      flash[:danger] = t ".cant_delete"
+    end
+    redirect_to users_path
   end
 
   private
@@ -45,7 +55,7 @@ class UsersController < ApplicationController
   def load_user
     @user = User.find_by id: params[:id]
     return if @user.present?
-    flash[:danger] = t "layouts.flash.notfound_user"
+    flash[:danger] = t ".notfound"
     redirect_to root_path
   end
 
@@ -53,13 +63,17 @@ class UsersController < ApplicationController
     load_user
     return if current_user? @user
     redirect_to root_path
-    flash[:danger] = t "layouts.flash.cant_edit"
+    flash[:danger] = t ".cant_edit"
   end
 
   def logged_in_user
     return if logged_in?
     store_location
-    flash[:danger] = t "layouts.flash.log_in"
+    flash[:danger] = t ".log_in"
     redirect_to login_path
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
   end
 end
