@@ -1,12 +1,25 @@
-<ul>
-  <%= category.name %>
-    <% @children = category.generate_children%>
-    <% if current_user.present? &&current_user.admin? %>
-    | <%= link_to t(".delete"), category, method: :delete,
-        data: {confirm: t(".confirm")} %>
+<li data-id= <%= category.id %>>
+  <%= link_to category.name, "javascipt:void(0)",
+    id: category.id,
+    data: {
+      toggle: "collapse",
+      target: "##{category.name}#{category.id}",
+      id: "#{category.id}"
+    },
+    aria: {
+      expanded: "false"
+    },
+    class: "display-i-b"
+  %>
+  <% if current_user.present? && current_user.admin? %>
+    <%= link_to t(".delete"), category,
+      class: "display-i-b", method: :delete,
+    data: { confirm: t(".confirm") } %>
   <% end %>
-    <li>
+  <% @children = Category.smaller(category.id)%>
+  <% if @children.present? %>
+  <ul class="nav collapse sub-nav-cate" id= <%= "#{category.name}#{category.id}" %>  role="menu" aria-labelledby= <%= category.id %>>
     <%= render @children %>
-    </li>
-</ul>
-
+  </ul>
+<% end %>
+</li>

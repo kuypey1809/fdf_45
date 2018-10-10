@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :load_category, only: :destroy
   before_action :admin_user, only: [:destroy, :create]
+  before_action :load_categories, only: :new
 
   def index
     @parents = Category.largest
@@ -39,6 +40,10 @@ class CategoriesController < ApplicationController
     return if @category.present?
     flash[:danger] = t ".notfound"
     redirect_to root_path
+  end
+
+  def load_categories
+    @categories = Category.all.map{|m| [m.name, m.id]}
   end
 
   def admin_user

@@ -7,7 +7,7 @@ class Category < ApplicationRecord
   validates :name, presence: true,
     length: {maximum: Settings.category.name.max_size}
   validates :parent_id, presence: true, allow_nil: true
-  scope :largest, ->{where parent_id: nil}
+  scope :largest, ->{where parent_id: 0}
   scope :smaller, ->id {where "parent_id=?", id}
 
   def generate_children
