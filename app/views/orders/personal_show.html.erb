@@ -1,0 +1,30 @@
+<% provide(:title, t(".title")) %>
+<h1><%= t ".title" %></h1>
+
+<%= will_paginate %>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <%= t ".id" %>
+        </th>
+        <th>
+          <%= t ".time" %>
+        </th>
+        <th>
+          <%= t ".status" %>
+        </th>
+        <th>
+          <%= t ".price" %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @orders %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate %>

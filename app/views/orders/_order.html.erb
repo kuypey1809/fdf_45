@@ -1,0 +1,15 @@
+
+<tr>
+  <td>
+    <%= link_to order.id, order %>
+  </td>
+  <td>
+    <%= order.created_at.strftime(t(".time_default")) %>
+  </td>
+  <td>
+    <%= order.status %>
+  </td>
+  <td>
+    <%= order.total_cost %>
+  </td>
+</tr>

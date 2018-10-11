@@ -8,9 +8,9 @@ class Category < ApplicationRecord
     length: {maximum: Settings.category.name.max_size}
   validates :parent_id, presence: true, allow_nil: true
   scope :largest, ->{where parent_id: 0}
-  scope :smaller, ->id {where "parent_id=?", id}
+  scope :smaller, ->id{where "parent_id=?", id}
 
   def generate_children
-    Category.smaller(self.id)
+    Category.smaller(id)
   end
 end

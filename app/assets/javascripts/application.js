@@ -16,3 +16,18 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+
+(function() {
+  if ($) {
+    var token = $( 'meta[name="csrf-token"]' ).attr( 'content' );
+
+    $.ajaxSetup( {
+      beforeSend: function ( xhr ) {
+        xhr.setRequestHeader( 'X-CSRF-Token', token );
+      }
+    });
+  }
+})();

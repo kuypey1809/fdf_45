@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     if @category.destroy
-    redirect_back fallback_location: category_path
+      redirect_back fallback_location: category_path
     else
       flash[:danger] = t ".cant_delete"
     end

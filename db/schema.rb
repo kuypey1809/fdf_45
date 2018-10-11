@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 2018_10_04_033436) do
 
   create_table "order_details", force: :cascade do |t|
     t.integer "quantity"
-    t.integer "price"
+    t.decimal "unit_price"
+    t.decimal "total_price"
     t.integer "order_id"
     t.integer "product_id"
     t.datetime "created_at", null: false
@@ -32,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_033436) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "status", default: 0, null: false
-    t.integer "total_cost"
+    t.decimal "total_cost"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,8 +43,8 @@ ActiveRecord::Schema.define(version: 2018_10_04_033436) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "price", default: 0
-    t.integer "average_rate"
+    t.decimal "price", default: "0.0"
+    t.integer "average_rate", default: 0
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
