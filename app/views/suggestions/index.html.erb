@@ -1,23 +1,21 @@
-<% provide(:title, t(".title")) %>
-<h1><%= t ".title" %></h1>
-
-<%= will_paginate %>
-
 <div class="container">
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>
-          <%= t ".id" %>
+          <%= t ".image" %>
         </th>
         <th>
-          <%= t ".time" %>
+          <%= t ".name" %>
+        </th>
+        <th>
+          <%= t ".description" %>
+        </th>
+        <th>
+          <%= t ".category" %>
         </th>
         <th>
           <%= t ".status" %>
-        </th>
-        <th>
-          <%= t ".price" %>
         </th>
         <% if current_user.admin? %>
           <th>
@@ -27,9 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @orders %>
+      <%= render @suggestions %>
     </tbody>
   </table>
 </div>
-
-<%= will_paginate %>

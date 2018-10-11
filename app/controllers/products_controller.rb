@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :admin_user, :logged_in_user, only: %i(create destroy new)
   before_action :load_product, only: %i(show destroy edit update)
   before_action :load_parent_categories, only: :index
-  before_action :load_categories, only: :new
+  before_action :load_categories, only: [:new, :create]
 
   def index
     @products = Product.paginate(page: params[:page]).sort_by_datetime
