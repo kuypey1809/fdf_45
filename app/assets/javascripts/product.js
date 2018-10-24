@@ -1,9 +1,3 @@
-$("#nav-menu li").on("click", function (e) {
-  let id = e.target.getAttribute("id");
-  $.get("/get-product/" + id, function (res) {
-    console.log(res);
-  });
-});
 $("#up-quantity").on("click", function () {
   let quantity = parseInt($("#quantity").val());
   $("#quantity").val(quantity + 1);

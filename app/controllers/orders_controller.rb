@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
   before_action :load_data, only: :create
   before_action :admin_user, only: [:index, :edit]
   before_action :load_order, :check_user, :load_order_details, only: :show
+  before_action :load_order, only: :update
+  before_action :load_order_statuses, only: [:index, :personal_show]
 
   def new; end
 
@@ -27,7 +29,7 @@ class OrdersController < ApplicationController
   def show; end
 
   def index
-    @orders = Order.paginate page: params[:page]
+    @orders = Order.includes(:user).order(created_at: :desc).paginate page: params[:page]
   end
 
   def edit; end
@@ -36,10 +38,27 @@ class OrdersController < ApplicationController
     @orders = Order.personal(current_user.id).paginate page: params[:page]
   end
 
+  def update
+    @order.update_attributes(order_status_params)
+    if @order.save
+      redirect_to orders_path
+    else
+      render @orders
+    end
+  end
+
   private
 
   def order_params
     params.require(:order).permit(:user_id)
+  end
+
+  def order_status_params
+    params.require(:order).permit(:status)
+  end
+
+  def load_order_statuses
+    load_status Order
   end
 
   def load_data
@@ -59,6 +78,7 @@ class OrdersController < ApplicationController
   end
 
   def check_user
+    load_order
     return unless current_user.customer? && (@order.user_id != current_user.id)
     redirect_to myOrders_path
     flash[:warning] = t ".cant_see"

@@ -29,4 +29,10 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def load_status model
+    temp = model.statuses.keys.to_a
+    temp.shift
+    @statuses = temp
+  end
 end

@@ -18,6 +18,9 @@ en:
       users: "Users"
       my_orders: "My Orders"
       cart: "My Cart"
+      orders: "Orders"
+      suggestions: "Suggestions"
+      my_suggestions: "My Suggestions"
   static_pages:
     home:
       title: "Home"
@@ -109,8 +112,14 @@ en:
   orders:
     order:
       time_default: "%H:%M %m/%d/%Y"
+      update: "Update"
     index:
       title: "List all Orders"
+      id: "ID"
+      time: "Order Time"
+      price: "Price"
+      status: "Status"
+      user_name: "Customer"
     personal_show:
       title: "My Orders"
       id: "ID"
@@ -123,5 +132,33 @@ en:
       quantity: "Quantity"
       unit: "Unit Price"
       total: "Total Price"
+  suggestions:
+    success_create: "Create suggestion successful"
+    notfound: "Cant find this suggestion"
+    suggestion:
+      update: "Submit"
+    index:
+      image: "Image"
+      name: "Name"
+      description: "Description"
+      category: "Category"
+      status: "Status"
+      user_name: "Customer"
+    new:
+      title: Suggestions
+      name: "Name"
+      description: "Description"
+      category: "Category"
+      select_category: "Select Category"
+      submit: "Submit"
+    personal_show:
+      image: "Image"
+      name: "Name"
+      description: "Description"
+      category: "Category"
+      status: "Status"
+      create: "Create"
+
+
 
 

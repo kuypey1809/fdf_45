@@ -10,7 +10,7 @@
     <%= f.text_field :name, class: "form-control" %>
 
     <%= f.label :parent_id, t(".parent_id") %>
-    <%= select_tag(:category_id, options_for_select(@categories),
+    <%= f.select(:parent_id, options_for_select(@categories),
           prompt: t(".select_category")) %>
 
     <%= f.submit t(".create"), class: "btn btn-primary" %>

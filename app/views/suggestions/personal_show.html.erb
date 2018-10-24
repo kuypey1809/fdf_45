@@ -1,0 +1,30 @@
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          <%= t ".image" %>
+        </th>
+        <th>
+          <%= t ".name" %>
+        </th>
+        <th>
+          <%= t ".description" %>
+        </th>
+        <th>
+          <%= t ".category" %>
+        </th>
+        <th>
+          <%= t ".status" %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @suggestions %>
+    </tbody>
+  </table>
+</div>
+<div>
+  <%= link_to t(".create"), new_suggestion_path,
+    class: "btn btn-primary btn-create-suggestion" %>
+</div>

@@ -1,27 +1,30 @@
-
 <tr>
   <td>
-    <%= link_to order.id, order %>
+    <%= image_tag suggestion.image.url, class: :image_detail %>
   </td>
   <td>
-    <%= order.created_at.strftime(t(".time_default")) %>
+    <%= suggestion.name %>
   </td>
   <td>
-    <%= order.status %>
+    <%= suggestion.description %>
+  </td>
+  <td>
+    <%= suggestion.category.name %>
+  </td>
+  <td>
+    <%= suggestion.status %>
     <% if current_user.admin? %>
-      <%= form_for order, remote: true do |f| %>
+      <%= form_for suggestion, remote: true do |f| %>
         <%= render "shared/error_messages", object: f.object %>
         <%= f.select(:status, @statuses) %>
         <%= f.submit t(".update"), class: "btn btn-primary" %>
       <% end %>
     <% end %>
   </td>
-  <td>
-    <%= number_to_currency(order.total_cost, unit: "vnd", format: "%n %u") %>
-  </td>
   <% if current_user.admin? %>
     <td>
-      <%= order.user.name %>
+      <%= suggestion.user.name %>
     </td>
   <% end %>
 </tr>
+
