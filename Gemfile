@@ -23,15 +23,21 @@ gem "rails", "~> 5.2.1"
 gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
+gem "factory_bot"
 
 group :development, :test do
+    gem "pry-rails"
+
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "sqlite3", "1.3.13"
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "warden-rspec-rails"
+  gem "sorcery"
 end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
-  gem "pry-rails"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
@@ -46,6 +52,9 @@ group :test do
   gem "minitest-reporters", "1.1.14"
   gem "rails-controller-testing", "1.0.2"
   gem "selenium-webdriver"
+  gem "guard-rspec"
+  gem "launchy"
+  gem "shoulda-matchers", github: "thoughtbot/shoulda-matchers"
 end
 
 group :production do
